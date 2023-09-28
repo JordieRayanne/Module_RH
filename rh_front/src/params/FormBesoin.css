@@ -1,0 +1,133 @@
+/* FormBesoin.css */
+h1{
+  margin-left: 25%;
+}
+/* Form container */
+.form-container {
+  max-width: 50%;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.098);
+  background-color: #fff;
+}
+
+/* Form title */
+.form-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Input and Selector container */
+.input-container,
+.selector-container {
+  margin-bottom: 20px;
+}
+
+/* Text input style */
+.input-container input[type="text"],
+.selector-container input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+/* Text input focus style */
+.input-container input[type="text"]:focus,
+.selector-container input[type="text"]:focus,
+textarea:focus {
+  border-color: #007bff;
+}
+
+/* Selector label style */
+.selector-label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Selector options style */
+.selector-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border: 2px solid #007bff;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  display: none;
+}
+
+/* Selector option style */
+.selector-options li {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Selector option hover style */
+.selector-options li:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Selector open state style */
+.selector.open .selector-options {
+  display: block;
+}
+
+/* File input style */
+.input-container input[type="file"] {
+  display: none;
+}
+
+.photo {
+  padding: 10px;
+  text-align: center;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button styles */
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Button hover style */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Reset button style */
+button[type="reset"] {
+  background-color: #ccc;
+  color: #333;
+}
+
+/* Reset button hover style */
+button[type="reset"]:hover {
+  background-color: #999;
+}
