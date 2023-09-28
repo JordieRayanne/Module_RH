@@ -1,0 +1,64 @@
+/* Selector.css */
+
+/* Selector container */
+.selector {
+  position: relative;
+  width: 200px;
+  font-family: Arial, sans-serif;
+  display: -webkit-inline-box;
+  cursor: pointer;
+}
+p{
+  margin-right: 5%;
+}
+.selector-flex{
+  display: flex;
+  display: inline;
+}
+/* Selector label */
+.selector-label {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  user-select: none;
+}
+
+/* Selector options */
+.selector-options {
+  list-style: none;
+  padding: 0;
+  margin: 0px 0px 0px 92%;
+  background-color: #fff;
+  border: 2px solid #007bff;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: -60%;
+  max-height: 150px;
+  overflow-y: auto;
+  display: none;
+  z-index: 1000;
+}
+
+/* Selector option */
+.selector-options li {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Selector option hover */
+.selector-options li:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Selector open state */
+.selector.open .selector-options {
+  display: block;
+}

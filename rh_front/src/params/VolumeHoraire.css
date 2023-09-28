@@ -1,0 +1,117 @@
+/* 
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+input:focus {
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+input:hover {
+  border-color: #007bff;
+}
+
+input:not(:placeholder-shown) {
+  border-color: #007bff;
+}
+
+::placeholder {
+  color: #aaa;
+}
+
+.input-container.clicked #label {
+  transform: translateY(-18px);
+  font-size: 12px;
+  color: #007bff;
+  transition: all 0.2s;
+}  */
+
+
+
+
+
+
+
+
+
+/* Input.css */
+
+/* Container for the input field */
+.input-container {
+  width: 90%;
+  position: relative;
+  margin:0px auto 20px auto;
+}
+
+/* Label styles */
+#label {
+  position: absolute;
+  font-size: 16px;
+  margin-left: 2%;
+  color: #333;
+  transform-origin: left bottom;
+  transform: translateY(40%);
+  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Input field styles */
+input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+/* Input field focus styles */
+input:focus {
+  border-color: #007bff; /* Change border color when input is focused */
+}
+
+/* Optional: Add a subtle box shadow on focus */
+input:focus {
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Optional: Add a subtle hover effect */
+input:hover {
+  border-color: #007bff;
+}
+
+/* Optional: Style for input when it has content */
+input:not(:placeholder-shown) {
+  border-color: #007bff;
+}
+
+/* Optional: Style for placeholder text */
+::placeholder {
+  color: #b0b0b0ca;
+}
+
+/* Label animation when input is clicked */
+.input-container.clicked #label {
+  transform: translateY(0);
+  font-size: 12px;
+  color: #007bff;
+}
