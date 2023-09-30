@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../params/FormBesoin.css';
 import Selector from './Selector';
 import VolumeHommeJour from './VolumeHommeJour';
@@ -22,6 +23,7 @@ const FormBesoin = ({ title, value }) => {
       });
   }, []);
 
+
   const [formData, setFormData] = useState({
     selectedOptionVolume: '',
     selectedOptionService: '',
@@ -38,15 +40,15 @@ const FormBesoin = ({ title, value }) => {
     });
 
     // Update the state variables to control component visibility
-    if (value === 'option1') {
+    if (value === '1') {
       setShowVolumeTache(true);
       setShowVolumeHoraire(false);
       setShowVolumeHommeJour(false);
-    } else if (value === 'option2') {
+    } else if (value === '2') {
       setShowVolumeTache(false);
       setShowVolumeHoraire(true);
       setShowVolumeHommeJour(false);
-    } else if(value === 'option3'){
+    } else if(value === '3'){
       setShowVolumeHoraire(false);
       setShowVolumeTache(false);
       setShowVolumeHommeJour(true);
@@ -60,12 +62,12 @@ const FormBesoin = ({ title, value }) => {
     let placeholderText = 'Select an option';
 
     // Update the placeholder text based on the selected option
-    if (formData.selectedOptionVolume === 'option1') {
-      placeholderText = 'Option 1 selected';
-    } else if (formData.selectedOptionVolume === 'option2') {
-      placeholderText = 'Option 2 selected';
-    } else if (formData.selectedOptionVolume === 'option3') {
-      placeholderText = 'Option 3 selected';
+    if (formData.selectedOptionVolume === '1') {
+      placeholderText = 'Taches';
+    } else if (formData.selectedOptionVolume === '2') {
+      placeholderText = 'Heures';
+    } else if (formData.selectedOptionVolume === '3') {
+      placeholderText = 'Homme Jour';
     }
 
 
@@ -94,11 +96,37 @@ const FormBesoin = ({ title, value }) => {
 
     // END SERVICE =================================================================================================================
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission, e.g., send data to the server
-    console.log('Form Data:', formData);
-  };
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+    
+      // Create an object containing the form data
+      const formDataObject = {
+        selectedOptionService: formData.selectedOptionService,
+        selectedOptionVolume: formData.selectedOptionVolume,
+        nom:"rakoto",
+        prenom:"Bozy",
+        // Add other form fields here as needed
+      };
+    
+      try {
+        // Send a POST request to your Java Servlet endpoint
+        const response = await axios.post(
+          'http://localhost:8081/rh_back/SubmitBesoinController',
+          formDataObject
+        );
+    
+        // Handle the response from the server here
+        console.log('Server Response:', response.data);
+    
+        // Redirect to another page if needed
+        // history.push('/ProfilageView');
+      } catch (error) {
+        // Handle errors here
+        console.error('Error:', error);
+      }
+      navigate("/ProfilageView");
+    };
 
   return (
     <div className="form-container">
@@ -117,9 +145,9 @@ const FormBesoin = ({ title, value }) => {
         <div>
           <Selector
             options={[
-              { label: 'Option 1', value: 'option1' },
-              { label: 'Option 2', value: 'option2' },
-              { label: 'Option 3', value: 'option3' },
+              { label: 'Volume taches', value: '1' },
+              { label: 'Volume horaires', value: '2' },
+              { label: 'Volume HommeJour', value: '3' },
             ]}
             placeholder={placeholderText} // Use the dynamic placeholder text
             label="Unite de volume de travail"

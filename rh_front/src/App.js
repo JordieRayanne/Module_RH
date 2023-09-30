@@ -1,11 +1,21 @@
-// import logo from './logo.svg';
-import './App.css';
+import FormBesoinView from "./pages/FormBesoinView";
+import Header from "./Component/Header";
+import Nav from "./Component/Nav";
+import ProfilageView from "./pages/ProfilageView";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <p>Mandeha</p>
-    </div>
+    <>
+        <Header />
+        <Nav />
+        <Router>
+          <Routes>
+            <Route exact path="/FormBesoinView" element={<FormBesoinView />} />
+            <Route path="/ProfilageView" element={<ProfilageView />} />
+          </Routes>
+        </Router>
+    </>
   );
 }
 

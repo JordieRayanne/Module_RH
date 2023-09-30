@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-// import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import FormBesoin from './Component/FormBesoin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <FormBesoin title="Formulaire d'entree de besoin." value=""/>
-    {/* <App /> */}
+    <App />
   </React.StrictMode>
 );
 
