@@ -1,0 +1,10 @@
+/* Img.css */
+.custom-image {
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease; /* Add a hover effect */
+}
+
+.custom-image:hover {
+  transform: scale(1.05); /* Enlarge the image on hover */
+}

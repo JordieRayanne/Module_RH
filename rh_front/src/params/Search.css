@@ -1,0 +1,37 @@
+/* Search Bar Styles */
+.search-form {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+/* Icon Styles (Font Awesome) */
+.fa-search {
+  font-size: 18px;
+}

@@ -5,7 +5,7 @@ h1{
 /* Form container */
 .form-container {
   max-width: 50%;
-  margin: 5% auto;
+  margin: 10% 0% 0% 30%;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 10px;
