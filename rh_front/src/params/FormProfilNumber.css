@@ -1,0 +1,36 @@
+#FormProfilNumber {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin-top: 20%;
+    margin-left: 30%;
+    border: solid;
+}
+
+#FormProfilNumber label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#FormProfilNumber select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#FormProfilNumber .input-wrapper {
+    width: 50%;
+    /* Assurez-vous que votre composant Input a une classe "input-wrapper" pour appliquer ce style */
+    margin-bottom: 10px;
+}
+
+#FormProfilNumber input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

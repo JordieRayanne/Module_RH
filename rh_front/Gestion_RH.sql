@@ -31,6 +31,16 @@ create table profil(
 
 insert into profil (idservice,nom,description) values (1,'Developpeur junior','Devellopeur dynamique et rigoureux.');
 
+-- DATA
+-- Ajouter des données à la table 'service'
+insert into service (nom) values ('Ressources Humaines');
+insert into service (nom) values ('Marketing');
+
+-- Ajouter des données à la table 'profil'
+insert into profil (idservice, nom, description) values (4, 'Analyste Marketing', 'Analyste marketing expérimenté avec de fortes compétences analytiques.');
+insert into profil (idservice, nom, description) values (1, 'Developpeur Senior', 'Développeur expérimenté spécialisé dans les technologies web.');
+-- update profil set nom='Developpeur Senior' where id=3;
+
 create table profilage(
     idprofil integer references profil,
     nombre integer
