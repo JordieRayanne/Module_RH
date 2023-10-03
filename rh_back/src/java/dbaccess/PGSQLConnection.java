@@ -1,13 +1,13 @@
-package dbaccess;
+package dbaccess; 
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class PGSQLConnection {
-    private static final String JDBC_URL = "jdbc:postgresql://localhost:5433/gestion_rh";
+    private static final String JDBC_URL = "jdbc:postgresql://localhost:5432/gestion_rh";
     private static final String JDBC_USER = "postgres";
-    private static final String JDBC_PASSWORD = "postgres";
+    private static final String JDBC_PASSWORD = "root";
 
     // Register the PostgreSQL JDBC driver during class initialization
     static {
