@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import '../params/Input.css';
 
-const Input = ({ label, type, value = '' ,wdth=''}) => {
+const Input = ({ name,label, type, value = '' ,wdth=''}) => {
   const [clicked, setClicked] = useState(false);
-  const [inputValue, setInputValue] = useState(''); // Correctly defined state variable
+  const [inputValue, setInputValue] = useState(value); // Correctly defined state variable
 
   const handleInputClick = () => {
     setClicked(true);
@@ -18,6 +18,7 @@ const Input = ({ label, type, value = '' ,wdth=''}) => {
     <div className={`input-container${clicked ? ' clicked' : ''}`}>
       <label id='label'>{label}</label>
       <input
+        name={name}
         type={type}
         value={inputValue} // Use inputValue here
         onClick={handleInputClick}

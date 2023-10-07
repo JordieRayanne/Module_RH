@@ -72,7 +72,7 @@ const FormBesoin = ({ title, value }) => {
 
 
 
-    // SERVICE =================================================================================================================
+    // SERVICE ====================================================================================================================
     // Define a variable for the placeholder text
     const [placeholderService, setPlaceholderService] = useState('Select a service or department');
     const servicesOptions = services.map((service) => ({
@@ -97,36 +97,39 @@ const FormBesoin = ({ title, value }) => {
     // END SERVICE =================================================================================================================
 
     const navigate = useNavigate();
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-    
-      // Create an object containing the form data
-      const formDataObject = {
-        selectedOptionService: formData.selectedOptionService,
-        selectedOptionVolume: formData.selectedOptionVolume,
-        nom:"rakoto",
-        prenom:"Bozy",
-        // Add other form fields here as needed
-      };
-    
-      try {
-        // Send a POST request to your Java Servlet endpoint
-        const response = await axios.post(
-          'http://localhost:8081/rh_back/SubmitBesoinController',
-          formDataObject
-        );
-    
-        // Handle the response from the server here
-        console.log('Server Response:', response.data);
-    
-        // Redirect to another page if needed
-        // history.push('/ProfilageView');
-      } catch (error) {
-        // Handle errors here
-        console.error('Error:', error);
+    const handleSubmit = (event) => {
+      event.preventDefault();
+
+      const formDataObject = new FormData();
+      formDataObject.append('selectedOptionService', formData.selectedOptionService);
+      formDataObject.append('selectedOptionVolume', formData.selectedOptionVolume);
+
+      // Conditionally add input values based on the selected option
+      if (String(formData.selectedOptionVolume) === '1') {
+        // Volume Tache inputs
+        formDataObject.append('numberOfTaches', formData.numberOfTaches);
+        formDataObject.append('capaciteUniteTache', formData.capaciteUniteTache);
+      } else if (String(formData.selectedOptionVolume) === '2') {
+        // Volume Horaire inputs
+        formDataObject.append('numberOfHours', formData.numberOfHours);
+        formDataObject.append('capaciteUniteHoraire', formData.capaciteUniteHoraire);
+      } else if (String(formData.selectedOptionVolume) === "3") {
+        // Volume HommeJour inputs
+        console.log(formData.selectedOptionVolume);
+        formDataObject.append('volumeUsageHommeJour', formData.volumeUsageHommeJour);
+        console.log(formData.volumeUsageHommeJour);
       }
-      navigate("/ProfilageView");
-    };
+      axios.post('http://localhost:8081/rh_back/SubmitBesoinController',formDataObject,{'Content-Type': 'multipart/form-data'})
+      .then((response) => {
+          const service_employee = (response).data
+          console.log(service_employee);
+          alert(service_employee);
+      })
+      .catch((error) => {
+        // alert(error);
+      });
+    }
+    
 
   return (
     <div className="form-container">
@@ -159,7 +162,7 @@ const FormBesoin = ({ title, value }) => {
 
         {showVolumeTache && <VolumeTache />}
         {showVolumeHoraire && <VolumeHoraire />}
-        {showVolumeHommeJour && <VolumeHommeJour />}
+        {showVolumeHommeJour && <VolumeHommeJour value={formData.volumeUsageHommeJour} />}
 
         <button type="submit" style={{ marginLeft: '5%' }}>
           Créer
@@ -168,6 +171,6 @@ const FormBesoin = ({ title, value }) => {
       </form>
     </div>
   );
-};
+}
 
 export default FormBesoin;

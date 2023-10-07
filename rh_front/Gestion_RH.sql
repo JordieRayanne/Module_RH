@@ -24,7 +24,7 @@ create table service_volume(
 
 create table profil(
     id serial primary key,
-    idservice integer references service,
+    idSV integer references service_volume,
     nom varchar(30),
     description varchar(1000)
 );

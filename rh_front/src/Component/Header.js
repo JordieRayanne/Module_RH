@@ -1,31 +1,55 @@
-import React, { Component } from 'react';
-import '../params/Headera.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react';
 import Img from './Img';
+import '../params/Header.css';
 
 const Header = () => {
-    return (
-      <header className="header-container">
-        <div className="logo">
-          <Img src="/logo192.png" alt="Logo" width="70" height="50" />
+  return (
+    <header className="modern-header" style={{fontSize: 24+"pt",justifyContent:"flex-start"}}>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container">
+          <a className="navbar-brand" href="#">
+            <Img src="/logo192.png" alt="Logo" width="70" height="50" />
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  About
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Services
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <nav className="nav-menu">
-          <ul>
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Services</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    );
-}
+      </nav>
+    </header>
+  );
+};
 
 export default Header;

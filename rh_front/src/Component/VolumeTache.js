@@ -7,10 +7,12 @@ const VolumeTache = ({label}) => {
     <div className='input-container'>
       <label id='label'>{label}</label><br/>
       <Input
+          name="numberOfTaches"
           label="Nombre de tache"
           type="number"
       /><br/><br/>
       <Input
+          name="CapaciteUniteTache"
           label="Capacite par unite"
           type="number"
       /><br/><br/>
