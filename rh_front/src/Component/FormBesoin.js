@@ -13,7 +13,7 @@ const FormBesoin = ({ title, value }) => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8081/rh_back/ServiceController') // Replace with the actual endpoint
+    axios.get('http://localhost:8080/rh_back/ServiceController') // Replace with the actual endpoint
       .then((response) => {
         const servicesData = response.data;
         setServices(servicesData);
@@ -21,7 +21,10 @@ const FormBesoin = ({ title, value }) => {
       .catch((error) => {
         console.error('Error fetching services:', error);
       });
-  }, []);
+  }, [
+
+    
+  ]);
 
 
   const [formData, setFormData] = useState({
@@ -112,7 +115,7 @@ const FormBesoin = ({ title, value }) => {
       try {
         // Send a POST request to your Java Servlet endpoint
         const response = await axios.post(
-          'http://localhost:8081/rh_back/SubmitBesoinController',
+          'http://localhost:8080/rh_back/SubmitBesoinController',
           formDataObject
         );
     

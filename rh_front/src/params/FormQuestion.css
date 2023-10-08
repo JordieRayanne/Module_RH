@@ -1,0 +1,70 @@
+#FormQuestionContent{
+    display: flex;
+}
+.FormQuestion {
+    width: 300px;
+    margin:0 auto;
+    margin-top: 10%;
+    /* margin-left:30%; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+    /* box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); */
+}
+
+.FormQuestion label ,.showOptionsForm input{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.FormQuestion select, .FormQuestion input, .CorrectAnswer input,.showOptionsForm input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.FormQuestion button , .CorrectAnswer button ,.showOptionsForm button{
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.FormQuestion button:hover {
+    background-color: #45a049;
+}
+
+.showOptionsForm{
+    width: 300px;
+    margin:0 auto;
+    margin-top: 10%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#Answer{
+    display: flex;
+}
+
+.CorrectAnswer{
+    width: 300px;
+    margin:0 auto;
+    margin-top: 20%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+}

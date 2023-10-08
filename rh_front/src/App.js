@@ -1,4 +1,6 @@
 import FormBesoinView from "./pages/FormBesoinView";
+import FormProfilView from "./pages/FormProfilView";
+import FormQuestionView from "./pages/FormQuestionView";
 import Header from "./Component/Header";
 import Nav from "./Component/Nav";
 import ProfilageView from "./pages/ProfilageView";
@@ -13,6 +15,8 @@ function App() {
           <Routes>
             <Route exact path="/FormBesoinView" element={<FormBesoinView />} />
             <Route path="/ProfilageView" element={<ProfilageView />} />
+            <Route path="/FormProfilView" element={<FormProfilView />} />
+            <Route exact path="/FormQuestionView" element={<FormQuestionView />} />
           </Routes>
         </Router>
     </>

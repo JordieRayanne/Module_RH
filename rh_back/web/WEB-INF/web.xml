@@ -8,4 +8,74 @@
         <servlet-name>ServiceController</servlet-name>
         <url-pattern>/ServiceController</url-pattern>
     </servlet-mapping>
+     
+    <servlet>
+        <servlet-name>ProfilController</servlet-name>
+        <servlet-class>controller.ProfilController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProfilController</servlet-name>
+        <url-pattern>/ProfilController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ProfilageController</servlet-name>
+        <servlet-class>controller.ProfilageController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProfilageController</servlet-name>
+        <url-pattern>/ProfilageController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>QuestionnaireController</servlet-name>
+        <servlet-class>controller.QuestionnaireController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuestionnaireController</servlet-name>
+        <url-pattern>/QuestionnaireController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ReponseVraiesController</servlet-name>
+        <servlet-class>controller.ReponseVraiesController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReponseVraiesController</servlet-name>
+        <url-pattern>/ReponseVraiesController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>OptionReponseController</servlet-name>
+        <servlet-class>controller.OptionReponseController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OptionReponseController</servlet-name>
+        <url-pattern>/OptionReponseController</url-pattern>
+    </servlet-mapping>
+    
+    <!-- Déclaration du filtre CORS -->
+    <filter>
+        <filter-name>CorsFilter</filter-name>
+        <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+        <init-param>
+            <param-name>cors.allowed.origins</param-name>
+            <param-value>*</param-value> <!-- Autorise toutes les origines, changez-le selon vos besoins -->
+        </init-param>
+        <init-param>
+            <param-name>cors.allowed.methods</param-name>
+            <param-value>GET, POST, PUT, DELETE, OPTIONS</param-value>
+        </init-param>
+        <init-param>
+            <param-name>cors.allowed.headers</param-name>
+            <param-value>Content-Type, Authorization</param-value>
+        </init-param>
+    </filter>
+
+    <!-- Mapping du filtre CORS pour toutes les URL -->
+    <filter-mapping>
+        <filter-name>CorsFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
 </web-app>
