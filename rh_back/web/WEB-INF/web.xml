@@ -27,6 +27,32 @@
         <url-pattern>/ProfilageController</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>QuestionnaireController</servlet-name>
+        <servlet-class>controller.QuestionnaireController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuestionnaireController</servlet-name>
+        <url-pattern>/QuestionnaireController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ReponseVraiesController</servlet-name>
+        <servlet-class>controller.ReponseVraiesController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReponseVraiesController</servlet-name>
+        <url-pattern>/ReponseVraiesController</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>OptionReponseController</servlet-name>
+        <servlet-class>controller.OptionReponseController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OptionReponseController</servlet-name>
+        <url-pattern>/OptionReponseController</url-pattern>
+    </servlet-mapping>
     
     <!-- Déclaration du filtre CORS -->
     <filter>

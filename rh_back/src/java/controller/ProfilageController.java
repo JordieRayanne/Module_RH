@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.PrintWriter; 
 
 import model.Profilage;
 
@@ -23,7 +23,7 @@ public class ProfilageController extends HttpServlet {
         try {
             // Votre traitement ici, si nécessaire
         } catch (Exception e) {
-            e.printStackTrace();
+           e.printStackTrace();
         }
     }
 
@@ -33,7 +33,7 @@ public class ProfilageController extends HttpServlet {
         Gson gson = new Gson();
         Profilage profilData = gson.fromJson(reader, Profilage.class);
 
-        profilData.addProfilNumber();
+        //profilData.addProfilNumber();
     
         System.out.println("Données reçues depuis React :");
         System.out.println("Option ID : " + profilData.getIdprofil());

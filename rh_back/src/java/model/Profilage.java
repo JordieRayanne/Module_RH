@@ -34,16 +34,16 @@ public class Profilage{
     }
 
     public void addProfilNumber() {
-    try (Connection connection = PGSQLConnection.getConnection()) {
-        String sql = "INSERT INTO profilage(idprofil, nombre) VALUES(?, ?)";
-        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setInt(1, this.getIdprofil()); // ID du profil
-            preparedStatement.setInt(2, this.getNombre()); // Nombre
-            preparedStatement.executeUpdate(); // Exécutez la requête
+        try (Connection connection = PGSQLConnection.getConnection()) {
+            String sql = "INSERT INTO profilage(idprofil, nombre) VALUES(?, ?)";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setInt(1, this.getIdprofil()); // ID du profil
+                preparedStatement.setInt(2, this.getNombre()); // Nombre
+                preparedStatement.executeUpdate(); // Exécutez la requête
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    } catch (Exception e) {
-        e.printStackTrace();
     }
-}
 
 }
